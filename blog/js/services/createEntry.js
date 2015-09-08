@@ -3,4 +3,4 @@
  */
 
 
-app.controller('blogController',);
+app.factory();
