@@ -14,11 +14,11 @@
     <script src="js/app.js"></script>
 
 </head>
-<body class="container" ng-app="weather-app">
+<body class="container" ng-app="weather-app" ng-controller="mainController">
     <div class="header">
-        <h1>Weather</h1>
+        <h1>{{ title }}</h1>
     </div>
-    <div class="main" ng-controller="mainController">
+    <div class="main" >
         <p>What city do you live in?</p>
         <input type="text" ng-model="city" placeholder="Provo">
         <br/>
@@ -30,10 +30,13 @@
         <br/>
         <p>How many days of weather would you like?</p>
 
-        <button ng-click="getWeather( city , country )">One day</button>-->
+        <button ng-click="getWeather( city , country ); alert(city+country)">One day</button>
+
         <button onclick="">Five day</button>
         <button onclick="">Ten day</button>
         <button onclick="">Fortnight</button>
+
+
     </div>
     <!--
     TODO:
@@ -50,6 +53,7 @@
     -->
 
     <!--Controllers-->
+    <script src="js/controllers/mainController.js"></script>
     <script src="js/controllers/weatherController.js"></script>
     <!--Directives-->
     <!--Services-->
