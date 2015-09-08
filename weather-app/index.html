@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- Optional theme -->
@@ -11,19 +12,25 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+
 </head>
-<body class="container">
+<body class="container" ng-app="weather-app">
     <div class="header">
         <h1>Weather</h1>
     </div>
-    <div class="main">
+    <div class="main" ng-controller="mainController">
         <p>What city do you live in?</p>
         <input type="text" ng-model="city" placeholder="Provo">
+        <br/>
+        <br/>
         <p>What country do you live in?</p>
-        <input type="text" ng-model="username" placeholder="USA">
+        <input type="text" ng-model="country" placeholder="USA">
+        <p>{{ country }}</p>
+        <br/>
+        <br/>
         <p>How many days of weather would you like?</p>
-        <button onclick="">One day</button>
+
+        <button ng-click="getWeather( city , country )">One day</button>-->
         <button onclick="">Five day</button>
         <button onclick="">Ten day</button>
         <button onclick="">Fortnight</button>
@@ -41,6 +48,12 @@
                 use ng-repeat in code to pull up slightly different view from what the one-day is
 
     -->
+
+    <!--Controllers-->
+    <script src="js/controllers/weatherController.js"></script>
+    <!--Directives-->
+    <!--Services-->
+    <script src="js/services/getWeather.js"></script>
 
 </body>
 </html>
