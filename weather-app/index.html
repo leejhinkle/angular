@@ -31,13 +31,15 @@
         <br/>
         <p>How many days of weather would you like?</p>
 
-        <button ng-click="getWeather()">One day</button>
+        <button class="btn" ng-click="getWeather(city, country, 1)">One day</button>
 
-        <button onclick="">Five day</button>
-        <button onclick="">Ten day</button>
-        <button onclick="">Fortnight</button>
+        <button class="btn" ng-click="getWeather(city, country, 5)">Five day</button>
+        <button class="btn" ng-click="getWeather(city, country, 10)">Ten day</button>
+        <button class="btn" ng-click="getWeather(city, country, 16)">Fortnight</button>
+        <hr>
+        <ng_view></ng_view>
 
-        <!----><show-weather></show-weather>
+
 
     </div>
     <!--

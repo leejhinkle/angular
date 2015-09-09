@@ -2,7 +2,7 @@
  * Created by leejhinkle on 8/9/15.
  */
 
-
+/*
 app.directive('showWeather', function() {
     return {
         restrict: 'E',
@@ -33,3 +33,4 @@ app.directive('showWeather', function() {
         }
     };
 });
+    */

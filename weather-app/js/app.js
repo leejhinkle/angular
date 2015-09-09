@@ -9,7 +9,7 @@ var app = angular.module('weather-app',['ngRoute']);
 app.config(function($routeProvider){
     $routeProvider
         .when('/', {
-            controller: 'weatherController',
+            controller: 'mainController',
             templateUrl: 'js/views/one-day.html'
         })
         .otherwise({
