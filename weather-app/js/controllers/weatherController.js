@@ -5,6 +5,6 @@
 app.controller('weatherController',['$scope', 'weather', function($scope, weather){
     weather.success(function(data){
         $scope.forecast = data;
-        console.log(data);
+        //console.log(data);
     });
 }]);

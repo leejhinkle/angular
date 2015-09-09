@@ -8,9 +8,9 @@ var app = angular.module('weather-app',['ngRoute']);
 
 app.config(function($routeProvider){
     $routeProvider
-        .when('/:id', {
+        .when('/', {
             controller: 'weatherController',
-            templateUrl: 'views/one-day.html'
+            templateUrl: 'js/views/one-day.html'
         })
         .otherwise({
             redirectTo: '/'
