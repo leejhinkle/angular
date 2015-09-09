@@ -7,4 +7,7 @@ app.controller('blogController',['$scope', function($scope){
     $scope.createEntry = function(){
         alert("Create entry");
     };
+    $scope.getEntries = function(){
+        alert("Get entries");
+    };
 }]);
