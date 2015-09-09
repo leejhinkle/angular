@@ -27,7 +27,6 @@
         <br/>
         <p>What country do you live in?</p>
         <input type="text" ng-model="country" placeholder="USA">
-        <p>{{ country }}</p>
         <br/>
         <br/>
         <p>How many days of weather would you like?</p>
@@ -36,7 +35,7 @@
 
         <button class="btn" ng-click="getWeather(city, country, 5)">Five day</button>
         <button class="btn" ng-click="getWeather(city, country, 10)">Ten day</button>
-        <button class="btn" ng-click="getWeather(city, country, 16)">Fortnight</button>
+        <button class="btn" ng-click="getWeather(city, country, 14)">Fortnight</button>
         <hr>
         <ng_view></ng_view>
 
@@ -45,15 +44,15 @@
     </div>
     <!--
     TODO:
-        Find weather api to use
-        Create ng-view field
-        Create routing service that gets info from the API for up to 14 days
-        Create html view to inject into ng-view field
-        Create functions to be used by each button
-            One day--should display one day's worth of info
+        √Find weather api to use
+        √Create ng-view field
+        √Create routing service that gets info from the API for up to 14 days
+        √Create html view to inject into ng-view field
+        √Create functions to be used by each button
+            √One day--should display one day's worth of info
                 Should this be more in-depth than the other ones?
-            Five-day through Fortnight
-                use ng-repeat in code to pull up slightly different view from what the one-day is
+            √Five-day through Fortnight
+                √use ng-repeat in code to pull up slightly different view from what the one-day is
 
     -->
 
