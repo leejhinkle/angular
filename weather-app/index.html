@@ -24,14 +24,20 @@
         <input type="text" ng-model="city" placeholder="Provo">
         <br/>
         <br/>
-<!--        <p>What country do you live in?</p>
+        <p>What country do you live in?</p>
         <input type="text" ng-model="country" placeholder="USA">
         <p>{{ country }}</p>
         <br/>
         <br/>
-        <p>How many days of weather would you like?</p>-->
+        <p>How many days of weather would you like?</p>
 
-        <ng-view></ng-view>
+        <button ng-click="getWeather()">One day</button>
+
+        <button onclick="">Five day</button>
+        <button onclick="">Ten day</button>
+        <button onclick="">Fortnight</button>
+
+        <!----><show-weather></show-weather>
 
     </div>
     <!--

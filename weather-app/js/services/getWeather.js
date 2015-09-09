@@ -4,11 +4,12 @@
 
 app.factory('weather', ['$http', function($http) {
 
-    return $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=Provo')
-        .success(function(data) {
-            return data;
-        })
-        .error(function(err) {
-            return err;
-        });
+    function getWeather (city){
+        return $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?q='+city)
+
+    }
+
+    return {getWeather: getWeather}; //exposes the funciton and allows me to call it from other places
+
+
 }]);
