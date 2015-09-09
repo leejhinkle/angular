@@ -1,6 +1,6 @@
 <h3>City: {{ forecast.city.name }}</h3>
 <div class="card" ng-repeat="day in forecast.list">
-    <p>Date {{ day.dt | date: 'short' }}</p><!---->
+    <p>Date {{ day.dt+"000" | date: 'short' }}</p><!---->
     <p>Overhead</p>
     <p>High {{ day.temp.max }} ˚C</p>
     <p>Low {{ day.temp.min }} ˚C</p>
