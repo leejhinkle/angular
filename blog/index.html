@@ -14,44 +14,45 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
 </head>
 <body ng-app="blogApp">
+<div class="container">
+    <div class="header">
+        <h1>Welcome to my basic blog app</h1>
+    </div>
+    <div class="main" ng-controller="blogController">
+        <p>Press button if you would like to create an entry</p>
+        <button class="" onclick="createEntry();">Create entry</button>
+        <!--
+        TODO:
+            The createEntry() should ask for a password first.  Without the password, we CANNOT
+                implement the createEntry() view, and the clicker of the button should not
+                be able to write an entry
+            Create an ng-view object to display the createEntry html view
+                this view should include a text area and a submit button
+            Create a div for entries with an ng-repeat for all entries.
+                Entries should be sorted by reverse chronological order.
+                Each entry should have a lit of comments (also in reverse chron order)
+                Each entry (NOT EACH COMMENT) should have the ability to respond.
+                This will likely be handled by a new ng-view object--look into how these work
+                    to ensure this is possible--that injects a response segment.
+                The response segment should include text fields for
+                    Author name
+                    Author email (with promise not to use for spam)
+                    Response
+                    Submit comment button
+                When exiting email text area, a check should be run determinging whether email is valid
+                    Submit button only enables when email is valid and there is text in all other fields
+                onSubmit, entry should be stored in DB as object connected to the specific entry under which it was made
 
-<div class="header">
-    <h1>Welcome to my basic blog app</h1>
+
+        -->
+    </div>
 </div>
-<div class="main" ng-controller="blogController">
-    <p>Press button if you would like to create an entry</p>
-    <button class="" onclick="createEntry();">Create entry</button>
-    <!--
-    TODO:
-        The createEntry() should ask for a password first.  Without the password, we CANNOT
-            implement the createEntry() view, and the clicker of the button should not
-            be able to write an entry
-        Create an ng-view object to display the createEntry html view
-            this view should include a text area and a submit button
-        Create a div for entries with an ng-repeat for all entries.
-            Entries should be sorted by reverse chronological order.
-            Each entry should have a lit of comments (also in reverse chron order)
-            Each entry (NOT EACH COMMENT) should have the ability to respond.
-            This will likely be handled by a new ng-view object--look into how these work
-                to ensure this is possible--that injects a response segment.
-            The response segment should include text fields for
-                Author name
-                Author email (with promise not to use for spam)
-                Response
-                Submit comment button
-            When exiting email text area, a check should be run determinging whether email is valid
-                Submit button only enables when email is valid and there is text in all other fields
-            onSubmit, entry should be stored in DB as object connected to the specific entry under which it was made
-
-
-    -->
-</div>
-
 
 
 
 
 <!--Controllers-->
+<script src="js/controllers/blogController.js"></script>
 <!--Directives-->
 <!--Services-->
 
