@@ -5,11 +5,11 @@
 app.config(function($routeProvider){
     $routeProvider
         .when('/', {
-            templateUrl: 'views/mainView/html',
+            templateUrl: 'js/views/mainView.html',
             controller: 'blogController'
-        });
+        })
         .when('/make-post',{
-            templateUrl: 'views/make-post.html',
+            templateUrl: 'js/views/make-post.html',
             controller: 'blogController'
         });
 });

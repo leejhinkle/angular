@@ -5,6 +5,8 @@
 //Be sure to inject all services and directives I might use
 app.controller('blogController',['$scope', '$http', function($scope, $http){
 
+    $scope.newPost = '';
+
     //Set up the firebase server connection
     $scope.firebaseConnection = new Firebase('https://ng-blog-app-hinkle.firebaseio.com/');
 
