@@ -14,16 +14,22 @@ app.controller('blogController',['$scope', '$http', function($scope, $http){
     $scope.entryRef = $scope.firebaseConnection.child('entries');
 
     //discover number of entries
-    $scope.createEntry = function(){
+    $scope.getEntries = $scope.entryRef.on('value', function(snapshot){
+        console.log(snapshot.val());
+        $scope.entries = snapshot.val();
+    }, function(errorObject){
+        console.log("There was an error: " + errorObject);
+    });
 
 
-    };
-    $scope.submitEntry = function(entryIndex, entry){
+
+
+
+
+    $scope.submitEntry = function(entry, entryText){
         //write to fB DB
-        $scope.entryRef.update({entryIndex : entry});
+        $scope.entryRef.update({entry : entryText});
+        //$scope.entryRef.on(child_added)
     };
 
-    $scope.getEntries = function(){
-        alert("Get entries");
-    };
 }]);

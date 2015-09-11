@@ -26,10 +26,12 @@
     </div>
     <div class="main" ng-controller="blogController">
         <p>Press button if you would like to create an entry</p>
-        <button class="" ng-click="createEntry()">Create entry</button>
+
+        <a href="/make-post" ><button class="btn" >Create entry</button></a>
         <!--When clicked, insert area to write an entry-->
         <ng-view></ng-view>
 
+        <a class="btn btn-active" href="#" ng-click="getEntries()">Get entries</a>
         <div class="blog-posts" ng-repeat="entry in entries"></div>
         <!--
         TODO:
