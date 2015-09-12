@@ -19,7 +19,7 @@
     <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
 </head>
 
-<body ng-app="blogApp">
+<body ng-app="blogApp" ng-cloak>
 <div class="container">
     <div class="header">
         <h1>Welcome to my basic blog app</h1>
@@ -31,8 +31,9 @@
         <!--When clicked, insert area to write an entry-->
         <ng-view></ng-view>
 
-        <a class="btn btn-active" href="#" ng-click="getEntries()">Get entries</a>
-        <div class="blog-posts" ng-repeat="entry in entries"></div>
+        <button class="btn btn-active" href="#" ng-click="getEntries()">{{ showButtonText }}</button>
+        <div class="blog-posts" ng-hide="showEntries === false" ng-repeat="entry in entries">I was an entry<p>{{ entry.entry }}</p></div>
+        <div ng-show="entries === null && showEntries === true">There are no blog posts to show</div>
         <!--
         TODO:
             The createEntry() should ask for a password first.  Without the password, we CANNOT

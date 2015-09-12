@@ -14,24 +14,51 @@ app.controller('blogController',['$scope', '$http', function($scope, $http){
 
     $scope.usersRef = $scope.firebaseConnection.child('users');
     $scope.entryRef = $scope.firebaseConnection.child('entries');
+    $scope.showEntries = false;
+    $scope.showButtonText = 'Show Blog Entries';
 
-    //discover number of entries
-    $scope.getEntries = $scope.entryRef.on('value', function(snapshot){
+    //get entries from db
+    $scope.entryRef.on('value', function (snapshot) {
         console.log(snapshot.val());
+
         $scope.entries = snapshot.val();
-    }, function(errorObject){
+        $scope.entryNum
+        console.log(Object.keys($scope.entries).length);
+    }, function (errorObject) {
         console.log("There was an error: " + errorObject);
     });
 
 
 
 
+    //show/hide the entries and change the number of buttons
+    $scope.getEntries = function() {
+        if ($scope.showEntries){
+            $scope.showEntries = false;
+            $scope.showButtonText = 'Show blog entries';
+        }
+        else {
+            $scope.showEntries = true;
+            $scope.showButtonText = 'Hide Blog Entries';
+        }
+    };
 
 
-    $scope.submitEntry = function(entry, entryText){
+    $scope.submitEntry = function(){
         //write to fB DB
-        $scope.entryRef.update({entry : entryText});
+        if ($scope.entries != null) {
+            $scope.entryNum = Object.keys($scope.entries).length + 1;
+        }
+        else{
+            $scope.entryNum = 1;
+        }
+        $scope.entryRef.push({
+            entryNum : $scope.entryNum,
+            entry : $scope.newPost
+        });
         //$scope.entryRef.on(child_added)
+        $scope.newPost = '';
+
     };
 
 }]);
