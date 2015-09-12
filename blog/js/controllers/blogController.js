@@ -45,20 +45,24 @@ app.controller('blogController',['$scope', '$http', function($scope, $http){
 
 
     $scope.submitEntry = function(){
-        //write to fB DB
-        if ($scope.entries != null) {
-            $scope.entryNum = Object.keys($scope.entries).length + 1;
+        if ($scope.newPost != '') {
+            //write to fB DB
+            if ($scope.entries != null) {
+                $scope.entryNum = Object.keys($scope.entries).length + 1;
+            }
+            else {
+                $scope.entryNum = 1;
+            }
+            $scope.entryRef.push({
+                entryNum: $scope.entryNum,
+                entry: $scope.newPost
+            });
+            //$scope.entryRef.on(child_added)
+            $scope.newPost = '';
         }
-        else{
-            $scope.entryNum = 1;
-        }
-        $scope.entryRef.push({
-            entryNum : $scope.entryNum,
-            entry : $scope.newPost
-        });
-        //$scope.entryRef.on(child_added)
-        $scope.newPost = '';
-
     };
 
+    $scope.replaceFunction = function(){
+        CKEDITOR.replace( 'blogger' );
+    }
 }]);

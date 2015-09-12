@@ -17,6 +17,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!--<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>-->
     <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+    <!--For the text editor window-->
+    <link rel='stylesheet' href='textAngular-1.4.3/dist/textAngular.css'>
+    <script src='textAngular-1.4.3/dist/textAngular-rangy.min.js'></script>
+    <script src='textAngular-1.4.3/dist/textAngular-sanitize.min.js'></script>
+    <script src='textAngular-1.4.3/dist/textAngular.min.js'></script>
+    <script src='textAngular-1.4.3/dist/textAngular-rangy.min.js'></script>
+    <script src='textAngular-1.4.3/dist/textAngular-sanitize.min.js'></script>
+
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
 </head>
 
 <body ng-app="blogApp" ng-cloak>
@@ -27,12 +40,13 @@
     <div class="main" ng-controller="blogController">
         <p>Press button if you would like to create an entry</p>
 
-        <a href="#/make-post" ><button class="btn" >Create entry</button></a>
+        <a href="#/make-post"><button class="btn" >Create entry</button></a>
         <!--When clicked, insert area to write an entry-->
         <ng-view></ng-view>
 
+
         <button class="btn btn-active" href="#" ng-click="getEntries()">{{ showButtonText }}</button>
-        <div class="blog-posts" ng-hide="showEntries === false" ng-repeat="entry in entries"><p>{{ entry.entryNum }}</p><p>{{ entry.entry }}</p></div>
+        <div class="blog-posts" ng-hide="showEntries === false" ng-repeat="entry in entries"><p>{{ entry.entryNum }}</p><p ng-bind-html="entry.entry | unsafe"></p></div>
         <div ng-show="entries === null && showEntries === true">There are no blog posts to show</div>
         <!--
         TODO:
@@ -71,6 +85,8 @@
 
 <!--Routes-->
 <script src="js/routes/route.js"></script>
+<!--filters-->
+<script src="js/filters/htmlfilter.js"></script>
 
 
 </body>
