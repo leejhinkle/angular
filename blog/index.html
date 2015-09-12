@@ -32,7 +32,7 @@
         <ng-view></ng-view>
 
         <button class="btn btn-active" href="#" ng-click="getEntries()">{{ showButtonText }}</button>
-        <div class="blog-posts" ng-hide="showEntries === false" ng-repeat="entry in entries">I was an entry<p>{{ entry.entry }}</p></div>
+        <div class="blog-posts" ng-hide="showEntries === false" ng-repeat="entry in entries"><p>{{ entry.entryNum }}</p><p>{{ entry.entry }}</p></div>
         <div ng-show="entries === null && showEntries === true">There are no blog posts to show</div>
         <!--
         TODO:
