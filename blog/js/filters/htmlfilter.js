@@ -7,3 +7,10 @@ app.filter('unsafe', function($sce) {
         return $sce.trustAsHtml(val);
     };
 });
+
+/*
+*
+* Thanks to Creative Punch: http://creative-punch.net/2014/04/preserve-html-text-output-angularjs/
+* For the code assist
+*
+* */
