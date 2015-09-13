@@ -18,17 +18,42 @@
     <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
 </head>
 <body>
-<div class="header">
-    <h1>Customer store</h1>
-</div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">Portfolio</a>
+            </div>
 
-<div class="main">
-    Please sign in.  After doing so, you will be able to view your purchase history.
-    <div class="sign-in">
-        <textarea typeof="username"></textarea>
-        <br/>
-        <textarea typeof="username"></textarea>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="../weather-app/index.html">Weather</a></li>
+                    <li><a href="../blog/index.html">Blog</a></li>
+                    <li class="active"><a href="../customerStore/index.html">Customer store</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+<div class="container">
+    <div class="header">
+        <h1>Customer store</h1>
+    </div>
 
+    <div class="main">
+        Please sign in.  After doing so, you will be able to view your purchase history.
+        <div class="sign-in">
+            <input type="text" placeholder="username" />
+            <br/>
+            <input type="password" placeholder="password" />
+
+        </div>
     </div>
 </div>
 </body>

@@ -1,4 +1,5 @@
 <h3>City: {{ forecast.city.name }}</h3>
+
 <div class="card" ng-repeat="day in forecast.list">
     <p>Date: {{ day.dt*1000 | date: 'short' }}</p><!--Has to be adjusted because the string is adjusted by 1000 at the API level-->
     <p>Overhead: {{ day.weather[0].description }} </p>

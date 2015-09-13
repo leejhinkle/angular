@@ -1,0 +1,11 @@
+.main{
+    background-color: #ebebeb;
+}
+
+.jumbotron{
+    background-color: #66afe9;
+}
+.jumbotron a{
+    color: #B21712;
+    text-decoration: underline;
+}

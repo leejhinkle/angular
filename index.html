@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html ng-app><!--THe ng-app tells the  browser to look for angular stuff-->
+<html ng-app="portfolioApp"><!--THe ng-app tells the  browser to look for angular stuff-->
 <head lang="en">
     <meta charset="UTF-8">
-    <title>First ng website: basic interactivity</title>
+    <title>Portfolio</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -20,63 +20,97 @@
     <!--Testing-->
     <script src="//cdn.ckeditor.com/4.5.3/standard/ckeditor.js"></script>
 
+
 </head>
-<body>
-    <div class="container">
-        <h1>Portfolio splash page</h1>
+<body class="main" ng-controller="thisController">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand active" href="/index.html">Portfolio</a>
+            </div>
 
-        <p>Below I built my first angular app.  It's stupid simple, but hopefully it makes sense.</p>
-        <p>The follow are apps I built starting on 8 September 2015:</p>
-        <ul>
-            <li>
-                <a href="weather-app/index.html">Get Weather:</a> accesses weather from an API using Angular services.
-                <ul>
-                    <li>Needs visual improvement</li>
-                    <li>Angular coding done</li>
-                    <ul>
-                        <li>√ Find weather api to use</li>
-                        <li>√ Create ng-view field</li>
-                        <li>√Create routing service that gets info from the API for up to 14 days</li>
-                        <li>√Create html view to inject into ng-view field</li>
-                        <li>√Create functions to be used by each button</li>
-                            <ul>
-                                <li>Chose to reuse same code instead.  Made it cleaner</li>
-                            </ul>
-
-                    </ul>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="weather-app/index.html">Weather</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                    <!--<li><a href="customerStore/index.html">Customer store</a></li>-->
                 </ul>
-            </li>
-            <li>
-                <a href="blog/index.html"> Blog app:</a> displays a blog of entries stored, allows people with email addresses to comment,
-                and allows the writer to input a password and have an entry be saved.
-            </li>
-            <li>
-                <a href="customerStore/index.html"> Customer store:</a> this is a front-facing "store." In reality it is a list of purchases made.
-                It is not editable by a customer.  I created this with the intent to use it as an interaction
-                module for one of my businesses.
-            </li>
-        </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Portfolio splash page</h1>
 
-        <hr>
-        <h1>Welcome to my first angular application</h1>
-        <p>Over time I'll build my angular skills, but this is just to start.</p>
-        <p>Please enter your name below</p>
-        <input type="text" ng-model="name" placeholder="Put your name here">
 
-        <p>{{ name }}, welcome to my page!</p>
-        <br>
-        <hr>
-        <h1>Let's try something else.</h1>
-        <p>Please enter a username and a password:</p>
-        <input type="text" ng-model="username" placeholder="Enter userneame">
+            <p>The follow are apps I built starting on 8 September 2015:</p>
+            <ul>
+                <li>
+                    <a href="weather-app/index.html">Get Weather:</a> accesses weather from an API using Angular services.
+                    <ul>
+                        <li>Needs visual improvement</li>
+                        <li>Angular coding done</li>
+                        <ul>
+                            <li>√ Find weather api to use</li>
+                            <li>√ Create ng-view field</li>
+                            <li>√Create routing service that gets info from the API for up to 14 days</li>
+                            <li>√Create html view to inject into ng-view field</li>
+                            <li>√Create functions to be used by each button</li>
+                                <ul>
+                                    <li>Chose to reuse same code instead.  Made it cleaner</li>
+                                </ul>
+
+                        </ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="blog/index.html"> Blog app:</a> displays a blog of entries stored, allows people with email addresses to comment,
+                    and allows the writer to input a password and have an entry be saved.
+                </li>
+                <!--<li>
+                    <a href="customerStore/index.html"> Customer store:</a> this is a front-facing "store." In reality it is a list of purchases made.
+                    It is not editable by a customer.  I created this with the intent to use it as an interaction
+                    module for one of my businesses.
+                </li>-->
+            </ul>
+        </div>
+        <div class="jumbotron">
+            <hr>
+            <h1>Welcome to my first angular application</h1>
+            <br/>
+            <p>Please enter your name below</p>
+            <input type="text" ng-model="name" placeholder="Put your name here">
+
+            <p>{{ name }}, welcome to my page!</p>
             <br>
-        <input type="password" ng-model="pword" placeholder="Enter userneame">
-            <br>
-        <p>Your username is {{ username }}</p>
-        <p>Your password is {{ pword }}</p>
-        <p>Don't worry, this isn't shown to anyone else ;)</p>
-        <p>Oh, wait.  Not true.  Well, sort of not true.  What up shoulder surfer?</p>
 
+        </div>
+
+        <div class="jumbotron">
+            <h1>Let's try something else.</h1>
+            <p>Please enter a username and a password:</p>
+            <input type="text" ng-model="username" placeholder="Enter userneame">
+                <br>
+            <input type="password" ng-model="pword" placeholder="Enter password">
+                <br>
+            <p>Your username is {{ username }}</p>
+            <p>Your password is {{ pword }}</p>
+            <p>Don't worry, this isn't shown to anyone else ;)</p>
+            <p>Oh, wait.  Not true.  Well, sort of not true.  What up shoulder surfer?</p>
+
+            <br>
+        </div>
+        <div class="jumbotron">
+            <h1>This is obviously pathetic.  Check out the others.</h1>
+        </div>
     </div>
 
 </body>
