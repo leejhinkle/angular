@@ -8,6 +8,7 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -46,7 +47,7 @@
         <div class="header">
             <h1>{{ title }}</h1>
         </div>
-        <div class="main" >
+        <div class="main jumbotron" >
             <p>What city do you live in?</p>
             <input type="text" ng-model="city" placeholder="Provo">
             <br/>
@@ -63,11 +64,9 @@
             <button class="btn" ng-click="getWeather(city, country, 10)">Ten day</button>
             <button class="btn" ng-click="getWeather(city, country, 14)">Fortnight</button>
             <hr>
-            <ng_view></ng_view>
-
-
 
         </div>
+        <ng_view></ng_view>
     </div>
     <!--
     TODO:

@@ -2,3 +2,60 @@
     The styles we're looking for in order to make it look pretty
 */
 
+
+.btn {
+    color: #B21712;
+    font-family: serif;
+    background-color: #333333;
+    font-weight: bold;
+
+}
+.btn:hover{
+    color: #ebebeb;
+    font-weight: bold;
+}
+
+.date{
+    position: absolute;
+    left: 75%;
+    background-color: lightskyblue;
+}
+.date > p{
+    margin: 15px 15px 15px 15px;
+}
+.overhead{
+    position: absolute;
+    /*top: 0%;*/
+    background-color: lightskyblue;
+}
+.overhead > p{
+    margin: 15px 15px 15px 15px;
+}
+
+.high {
+    position: absolute;
+    background-color: lightskyblue;
+}
+.high > p{
+    margin: 15px 15px 15px 15px;
+}
+.weather-img{
+    position: absolute;
+
+    left: 50%;
+}
+.low{
+    position: absolute;
+    background-color: lightskyblue;
+    left: 75%;
+}
+
+.low > p{
+    margin: 15px 15px 15px 15px;
+}
+
+
+
+.table th, .table td {
+    border-top: none !important;
+}

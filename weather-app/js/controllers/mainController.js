@@ -5,6 +5,8 @@ app.controller('mainController', ['$scope','weather', function($scope, weather){
     //the weather factory is going to be used by the main controller, so we need to include it above
     $scope.showWeath = false;
     $scope.title = "Weather";
+    $scope.city = 'Provo';
+    $scope.country = 'USA';
     $scope.getWeather = function (city, country, count){
         //now we access the weather factory and use ITS getWeather function, passing in city
         if (country === undefined)

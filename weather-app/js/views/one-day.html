@@ -1,18 +1,25 @@
 <h3>City: {{ forecast.city.name }}</h3>
 
-<div class="card" ng-repeat="day in forecast.list">
-    <p>Date: {{ day.dt*1000 | date: 'short' }}</p><!--Has to be adjusted because the string is adjusted by 1000 at the API level-->
-    <p>Overhead: {{ day.weather[0].description }} </p>
-    <p>
-        <img class="icon" ng-src="http://openweathermap.org/img/w/{{ day.weather[0].icon }}.png"
-    </p>
-    <p>High: {{ day.temp.max }} ˚C</p>
-    <p>Low: {{ day.temp.min }} ˚C</p>
+<div class="jumbotron card weather" ng-repeat="day in forecast.list">
+    <div class="date"><p>Date: {{ day.dt*1000 | date: 'shortDate' }}</p></div>
+    <div class="overhead"><p>Overhead: {{ day.weather[0].description }} </p></div>
+    <br/>
+    <br/>
+    <div class="weather-img"><img class="icon" ng-src="http://openweathermap.org/img/w/{{ day.weather[0].icon }}.png"/></div>
+    <br/>
+    <br/>
+    <div class="high"><p>High: {{ day.temp.max }} ˚C</p></div>
+
+    <div class="low"><p>Low: {{ day.temp.min }} ˚C</p></div>
+    <br/>
+
 
 </div>
-<p>
-    *Some updates time-delayed based on city location.  Updates taken only 1 per day in
-    smaller cities may return an initial day from yesterday.  This is an API limitation.
-    Example: Provo usually returns yesterday first.  New York will always return a nearly
-    minute-correct forecast.
-</p>
+<div class="jumbotron">
+    <p>
+        *Some updates time-delayed based on city location.  Updates taken only 1 per day in
+        smaller cities may return an initial day from yesterday.  This is an API limitation.
+        Example: Provo usually returns yesterday first.  New York will always return a nearly
+        minute-correct forecast.
+    </p>
+</div>
