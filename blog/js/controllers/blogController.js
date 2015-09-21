@@ -22,7 +22,7 @@ app.controller('blogController',['$scope', '$http', function($scope, $http){
         console.log(snapshot.val());
 
         $scope.entries = snapshot.val();
-        $scope.entryNum
+        $scope.entryNum = Object.keys($scope.entries).length;
         console.log(Object.keys($scope.entries).length);
     }, function (errorObject) {
         console.log("There was an error: " + errorObject);
